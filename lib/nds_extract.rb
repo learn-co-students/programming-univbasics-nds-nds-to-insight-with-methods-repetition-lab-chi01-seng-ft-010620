@@ -35,9 +35,22 @@ def list_of_directors(source)
 end
 
 def total_gross(source)
-  result = directors_totals(source)
-  grand_total = result["Stephen Spielberg"] + result["Russo Brothers"] + result["James Cameron"] + result["Spike Lee"] + result["Wachowski Siblings"] + result["Robert Zemeckis"] + result["Quentin Tarantino"] + result["Martin Scorsese"] + result["Francis Ford Coppola"]
-  grand_total
+  # result = directors_totals(source)
+  # grand_total = result["Stephen Spielberg"] + result["Russo Brothers"] + result["James Cameron"] + result["Spike Lee"] + result["Wachowski Siblings"] + result["Robert Zemeckis"] + result["Quentin Tarantino"] + result["Martin Scorsese"] + result["Francis Ford Coppola"]
+  # grand_total
+  dir_to_earnings_hash = directors_totals(source)
+  dir_names = list_of_directors(source)
+    i = 0
+
+    total = 0
+
+    while i < dir_names.length do
+      dir_name = dir_names[i]
+      total += dir_to_earnings_hash[dir_name]
+      i += 1
+    end
+
+ total
   # Write this implementation
   #
   # Should use methods:
